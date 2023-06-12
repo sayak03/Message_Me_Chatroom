@@ -1,1 +1,54 @@
-<h1>Login#Page</h1>
+<div class="px-4 my-3 text-center">
+	<%= image_tag("signlogo.png", class: "rounded-circle mx-auto border border-secondary-subtle border-5", width: "79", height: "79") %>
+    <h4 class="fw-bold text-body-emphasis">Log in to continue</h4>
+</div>
+
+<div class="card overflow-hidden z-index-1 mx-5 shadow-sm bg-body-tertiary rounded">
+    <div class="card-body p-0">
+        <div class="row g-0 h-100">
+            <div class="col-md-5 text-center bg-card-gradient"style="background-color:#19bbff;">
+                <div class="position-relative p-4 pt-md-5 pb-md-7 light" >
+                  <!--/.bg-holder-->
+                  <div class="z-index-1 position-relative"><a class="link-light mb-4 d-inline-block fw-bolder" href="#">MessageMe</a>
+                    <p class="opacity-75 text-white">With the power of chatroom you can now focus only on chat for your digital products, while leaving the UI design on us!</p>
+                  </div>
+                </div>
+                <div class="mt-5 pt-5">
+	                <div class="mt-5 mb-2 mt-md-5 mb-md-3 light">
+	                  <p class="text-white">Don't have an account?<br><a class="text-decoration-underline link-light" href="../../../pages/authentication/card/register.html">Get started!</a></p>
+	                  <p class="mb-0 mt-5 mt-md-5 fs--1 fw-semi-bold text-white opacity-75">Read our <a class="text-decoration-underline text-white" href="#!">terms</a> and <a class="text-decoration-underline text-white" href="#!">conditions </a></p>
+	                </div>
+                </div>
+            </div>
+            <div class="col-md-7 d-flex flex-center">
+                <div class="p-4 p-md-4 flex-grow-1">
+                    <div class="row flex-between-center">
+	                    <div class="col-auto">
+	                      <h3>Account Login</h3>
+	                    </div>
+                    </div>
+                    <form>
+                        <div class="mb-3"><label class="form-label" for="card-email">Email address</label><input class="form-control" id="card-email" type="email"></div>
+                        <div class="mb-3">
+                          <div class="d-flex justify-content-between"><label class="form-label" for="card-password">Password</label></div><input class="form-control" id="card-password" type="password">
+                        </div>
+                        <div class="row flex-between-center">
+                          <div class="col-auto">
+                            <div class="form-check mb-0"><input class="form-check-input" type="checkbox" id="card-checkbox" checked="checked"><label class="form-check-label mb-0" for="card-checkbox">Remember me</label></div>
+                          </div>
+                          <div class="col-auto position-absolute start-60 end-0"><a href="">Forgot Password?</a></div>
+                        </div>
+                        <div class="mb-3"><button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">Log in</button></div>
+                    </form>
+                    <div class="position-relative mt-4">
+                        <div class="d-flex justify-content-center">or log in with</div>
+                    </div>
+                    <div class="row g-2 mt-2">
+                        <div class="col-sm-6"><a class="btn btn-outline-danger btn-sm d-block w-100" href="#"><i class="bi bi-google me-1"></i>google</a></div>
+                        <div class="col-sm-6"><a class="btn btn-outline-danger btn-sm d-block w-100" href="#"><i class="bi bi-facebook me-1"></i>facebook</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
