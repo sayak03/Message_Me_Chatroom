@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary px-5 rounded-1" style="background-color: #37688c;">
+<nav class="navbar navbar-expand-sm bg-body-tertiary px-5 bg-dark border-bottom border-bottom-dark rounded-1" data-bs-theme="dark">
       <div class="container-fluid">
         <a class="navbar-brand text-light" href="#">MessageMe</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,16 +14,21 @@
             </li>
           </ul>
           <div class="d-flex navbar-nav mb-2 mb-lg-0 mx-2">
-            <li class=" dropdown d-flex me-auto">
-              <a class=" nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu" style="background-color: #37688c;">
-                <li><a class="dropdown-item text-light" href="#">Action</a></li>
-                <li><hr class="dropdown-divider text-light"></li>
-                <li><a class="dropdown-item text-light" href="#">Another action</a></li>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Account
+                  </a>
+                  <div class="dropdown-menu animate slideIn dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                    <%= link_to "Log in", login_path, class: "dropdown-item" %>
+                    <a class="dropdown-item" href="#">Log out</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Sing in</a>
+                  </div>
+                </li>
               </ul>
-            </li>
+            </div>
             <button class="btn btn-outline-light mx-2">Sign Up</button>
           </div>
         </div>
