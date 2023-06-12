@@ -2,20 +2,20 @@
 	<%= image_tag("signlogo.png", class: "rounded-circle mx-auto border border-secondary-subtle border-5", width: "79", height: "79") %>
     <h4 class="fw-bold text-body-emphasis">Log in to continue</h4>
 </div>
-
 <div class="card overflow-hidden z-index-1 mx-5 shadow-sm bg-body-tertiary rounded">
     <div class="card-body p-0">
         <div class="row g-0 h-100">
             <div class="col-md-5 text-center bg-card-gradient"style="background-color:#19bbff;">
                 <div class="position-relative p-4 pt-md-5 pb-md-7 light" >
                   <!--/.bg-holder-->
-                  <div class="z-index-1 position-relative"><a class="link-light mb-4 d-inline-block fw-bolder" href="#">MessageMe</a>
-                    <p class="opacity-75 text-white">With the power of chatroom you can now focus only on chat for your digital products, while leaving the UI design on us!</p>
+                  <div class="z-index-1 position-relative">
+                    <h3><%= link_to "MessageMe", root_path, class: "navbar-brand text-light" %></h3>
+                    <p class="opacity-75 text-white pt-3">With the power of chatroom you can now focus only on chat for your digital products, while leaving the UI design on us!</p>
                   </div>
                 </div>
                 <div class="mt-5 pt-5">
 	                <div class="mt-5 mb-2 mt-md-5 mb-md-3 light">
-	                  <p class="text-white">Don't have an account?<br><a class="text-decoration-underline link-light" href="../../../pages/authentication/card/register.html">Get started!</a></p>
+	                  <p class="text-white">Don't have an account?<br><a class="text-decoration-underline link-light" href="#">Get started!</a></p>
 	                  <p class="mb-0 mt-5 mt-md-5 fs--1 fw-semi-bold text-white opacity-75">Read our <a class="text-decoration-underline text-white" href="#!">terms</a> and <a class="text-decoration-underline text-white" href="#!">conditions </a></p>
 	                </div>
                 </div>
