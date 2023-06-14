@@ -22,14 +22,17 @@
                   </a>
                   <div class="dropdown-menu animate slideIn dropdown-menu-dark" aria-labelledby="navbarDropdown">
                     <%= link_to "Log in", login_path, class: "dropdown-item" %>
-                    <a class="dropdown-item" href="#">Log out</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Sing in</a>
-                  </div>
+                    <% if logged_in? %>
+                      <%= link_to "Logout", logout_path, method: :delete, class: "dropdown-item" %>
+                    <% end %>
                 </li>
               </ul>
             </div>
-            <button class="btn btn-outline-light mx-2">Sign Up</button>
+            <% if !logged_in? %>
+              <div class="item">
+                <%= link_to "Log in", login_path, class: "btn btn-outline-light mx-2" %>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>

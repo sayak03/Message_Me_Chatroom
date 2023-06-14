@@ -27,10 +27,18 @@
 	                      <h3>Account Login</h3>
 	                    </div>
                     </div>
-                    <form>
-                        <div class="mb-3"><label class="form-label" for="card-email">Email address</label><input class="form-control" id="card-email" type="email"></div>
+                    <%= form_for(:session, html: {role: "form"}, url: login_path) do |f| %>
                         <div class="mb-3">
-                          <div class="d-flex justify-content-between"><label class="form-label" for="card-password">Password</label></div><input class="form-control" id="card-password" type="password">
+                            <%= f.label :name, "Username" , class: "form-label"%>
+                            <%= f.text_field :name, class: "form-control", placeholder: "Username" %>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between">
+                                <%= f.label :password, class: "form-label" do %>
+                                  Password
+                                <% end %>
+                            </div>
+                            <%= f.password_field :password, class:"form-control", placeholder: "Password" %>
                         </div>
                         <div class="row flex-between-center">
                           <div class="col-auto">
@@ -38,8 +46,10 @@
                           </div>
                           <div class="col-auto position-absolute start-60 end-0"><a href="">Forgot Password?</a></div>
                         </div>
-                        <div class="mb-3"><button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">Log in</button></div>
-                    </form>
+                        <div class="mb-3">
+                            <%= f.button "Login", class: "btn btn-primary d-block w-100 mt-3" %>
+                        </div>
+                    <% end %>
                     <div class="position-relative mt-4">
                         <div class="d-flex justify-content-center">or log in with</div>
                     </div>
