@@ -1,5 +1,7 @@
 class ChatroomController < ApplicationController
-	def new
+	def index
+	  @contents = Content.all
 	end
+
 
 end
