@@ -8,13 +8,7 @@
 	<div class="col-8">
 		<div class="my-3 p-3 card chatbox shadow-sm bg-body-tertiary rounded">
       		<div class="card-body">
-      		<% @contents.each do |content| %>
-			    <div class="d-flex text-body-secondary pt-3">
-			      <p class="pb-1 mb-0 small lh-md">
-			        <em class="fw-bold text-info"><%= content.user.name %></em>: <%= content.body %>
-			      </p>
-			    </div>
-			    <% end %>
+      		<%= render @contents %>
 			</div>
       		<div class="border-top input-group">
                 <input type="text" class="form-control mt-3" placeholder="Input group example" aria-label="Input group example" aria-describedby="basic-addon1">
