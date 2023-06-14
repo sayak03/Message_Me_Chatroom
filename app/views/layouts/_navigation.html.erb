@@ -1,39 +1,39 @@
 <nav class="navbar navbar-expand-sm bg-body-tertiary px-5 bg-dark border-bottom border-bottom-dark rounded-1" data-bs-theme="dark">
-      <div class="container-fluid">
-        <%= link_to "MessageMe", root_path, class: "navbar-brand text-light" %>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <div class="container-fluid">
+    <%= link_to "MessageMe", root_path, class: "navbar-brand text-light" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to "Chatroom", root_path, class: "nav-link active text-light"%>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" aria-current="page" href="#">Message</a>
+        </li>
+      </ul>
+      <div class="d-flex navbar-nav mb-2 mb-lg-0 mx-2">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <%= link_to "Chatroom", root_path, class: "nav-link active text-light"%>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light" aria-current="page" href="#">Message</a>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Account
+              </a>
+              <div class="dropdown-menu animate slideIn dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                <%= link_to "Log in", login_path, class: "dropdown-item" %>
+                <% if logged_in? %>
+                  <%= link_to "Logout", logout_path, method: :delete, class: "dropdown-item" %>
+                <% end %>
             </li>
           </ul>
-          <div class="d-flex navbar-nav mb-2 mb-lg-0 mx-2">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto">
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Account
-                  </a>
-                  <div class="dropdown-menu animate slideIn dropdown-menu-dark" aria-labelledby="navbarDropdown">
-                    <%= link_to "Log in", login_path, class: "dropdown-item" %>
-                    <% if logged_in? %>
-                      <%= link_to "Logout", logout_path, method: :delete, class: "dropdown-item" %>
-                    <% end %>
-                </li>
-              </ul>
-            </div>
-            <% if !logged_in? %>
-              <div class="item">
-                <%= link_to "Log in", login_path, class: "btn btn-outline-light mx-2" %>
-              </div>
-            <% end %>
-          </div>
         </div>
+        <% if !logged_in? %>
+          <div class="item">
+            <%= link_to "Log in", login_path, class: "btn btn-outline-light mx-2" %>
+          </div>
+        <% end %>
       </div>
-    </nav>
+    </div>
+  </div>
+</nav>
