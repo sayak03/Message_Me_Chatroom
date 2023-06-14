@@ -1,4 +1,5 @@
 class ContentsController < ApplicationController
+  before_action :require_user
   before_action :set_content, only: %i[ show edit update destroy ]
 
   # GET /contents or /contents.json
@@ -21,11 +22,11 @@ class ContentsController < ApplicationController
 
   # POST /contents or /contents.json
   def create
-    @content = Content.new(content_params)
+    content = current_user.contents.new(content_params)
 
     respond_to do |format|
-      if @content.save
-        format.html { redirect_to content_url(@content), notice: "Content was successfully created." }
+      if content.save
+        format.html { redirect_to root_path }
         format.json { render :show, status: :created, location: @content }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -65,6 +66,6 @@ class ContentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def content_params
-      params.require(:content).permit(:body, :user_id)
+      params.require(:content).permit(:body)
     end
 end

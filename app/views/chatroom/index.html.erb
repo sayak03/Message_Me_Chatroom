@@ -10,12 +10,12 @@
       		<div class="card-body">
       		<%= render @contents %>
 			</div>
-      		<div class="border-top input-group">
-                <input type="text" class="form-control mt-3" placeholder="Input group example" aria-label="Input group example" aria-describedby="basic-addon1">
-                <span class="input-group-text bgcolor mt-3" id="basic-addon1">
-                  <i class="bi bi-pencil-square"></i>
-                </span>
-            </div>
+			<div class="input-group">
+				<%= form_for(@content, html: {class: "border-top input-group ", role: "form"}, url: contents_path) do |f| %>
+					<%= f.text_field :body, class: " rounded-start form-control mt-3"%>
+	          <%= f.button '<i class="bi bi-send-fill"></i>'.html_safe, class:"border border-0 btn btn-danger btn-md input-group-text mt-3", id:"basic-addon1" %>
+	      <% end %>
+      </div>
 		</div>
 	</div>
 	<div class="col-4">
