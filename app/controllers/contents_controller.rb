@@ -24,14 +24,10 @@ class ContentsController < ApplicationController
   def create
     content = current_user.contents.new(content_params)
 
-    respond_to do |format|
-      if content.save
-        format.html { redirect_to root_path }
-        format.json { render :show, status: :created, location: @content }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @content.errors, status: :unprocessable_entity }
-      end
+    if content.save
+      ActionCable.server.broadcast 'chatroom_channel',
+          {body: content.body }
+      # redirect_to root_path
     end
   end
 
