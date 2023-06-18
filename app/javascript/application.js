@@ -3,3 +3,11 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "bootstrap"
 import "channels"
+
+
+function scroll_bottom() {
+  const messages = document.getElementById('messages');
+  messages.scrollTop = messages.scrollHeight;
+}
+
+scroll_bottom();

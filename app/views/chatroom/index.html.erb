@@ -7,8 +7,10 @@
 <div class="row">
 	<div class="col-8">
 		<div class="my-3 p-3 card chatbox shadow-sm bg-body-tertiary rounded">
-      		<div class="card-body" id="message-container">
-      			<%= render @contents %>
+      		<div class="container" id="messages">
+	      		<div class="card-body" id="message-container">
+	      			<%= render @contents %>
+				</div>
 			</div>
 			<div class="input-group">
 				<%= form_for(@content, html: {class: "border-top input-group ", role: "form"}, url: contents_path, data: { remote: true }) do |f| %>
@@ -22,11 +24,11 @@
 		<div class="my-3 p-3 card chatbox shadow-sm bg-body-tertiary rounded">
       		<div class="card-body">
 			  <ul class="dropdown-menu position-static d-grid gap-1 rounded-3 mx-0 border-0 w-220px p-2 dropdown-menu-dark">
-			      <li><a class="dropdown-item rounded-2 active" href="#">Action</a></li>
+			      <li><a class="dropdown-item rounded-2 active" href="#">Chatroom</a></li>
 			      <li><hr class="dropdown-divider"></li>
-			      <li><a class="dropdown-item rounded-2" href="#">Another action</a></li>
+			      <li><a class="dropdown-item rounded-2" href="#">User</a></li>
 			      <li><hr class="dropdown-divider"></li>
-			      <li><a class="dropdown-item rounded-2" href="#">Separated link</a></li>
+			      <li><a class="dropdown-item rounded-2" href="#">Message</a></li>
 			  </ul>
 			</div>
 		</div>

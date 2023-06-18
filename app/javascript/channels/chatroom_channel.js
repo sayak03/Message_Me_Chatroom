@@ -14,5 +14,7 @@ consumer.subscriptions.create("ChatroomChannel", {
     const modMessage = document.createElement('div');
     modMessage.innerHTML = data.mod_message;
     messageContainer.appendChild(modMessage);
+    
+    scroll_bottom();
   }
 });
