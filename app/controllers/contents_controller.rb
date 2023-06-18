@@ -26,7 +26,7 @@ class ContentsController < ApplicationController
 
     if content.save
       ActionCable.server.broadcast 'chatroom_channel',
-          {body: content.body }
+          {mod_message: render_to_string(partial: 'content', locals: { content: content })}
       # redirect_to root_path
     end
   end

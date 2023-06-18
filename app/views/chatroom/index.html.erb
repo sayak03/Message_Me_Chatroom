@@ -7,11 +7,11 @@
 <div class="row">
 	<div class="col-8">
 		<div class="my-3 p-3 card chatbox shadow-sm bg-body-tertiary rounded">
-      		<div class="card-body">
-      		<%= render @contents %>
+      		<div class="card-body" id="message-container">
+      			<%= render @contents %>
 			</div>
 			<div class="input-group">
-				<%= form_for(@content, html: {class: "border-top input-group ", role: "form"}, url: contents_path) do |f| %>
+				<%= form_for(@content, html: {class: "border-top input-group ", role: "form"}, url: contents_path, data: { remote: true }) do |f| %>
 					<%= f.text_field :body, class: " rounded-start form-control mt-3"%>
 	          <%= f.button '<i class="bi bi-send-fill"></i>'.html_safe, class:"border border-0 btn btn-danger btn-md input-group-text mt-3", id:"basic-addon1" %>
 	      <% end %>
